@@ -1,11 +1,5 @@
 var assert = require('chai').assert
-var print_color_map = require("../misaligned")
-
-
-let capturedOutput = [];
-console.log = function (message) {
-    capturedOutput.push(message);
-};
+var color = require("../misaligned")
 
 function test(color) {
 
@@ -26,11 +20,12 @@ describe("Misaligned", function () {
 
    
     it("Total Number of color pair should be 25 ",function(){
-        result = print_color_map();
+        result = color.print_color_map();
         assert.equal(result, 25);
     });
 
     it("separator (|) are misaligned", function () {
+        let capturedOutput = color.capturedOutput;
         assert.equal(test(capturedOutput),true);
     });
 
