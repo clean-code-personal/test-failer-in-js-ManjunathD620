@@ -6,7 +6,10 @@ describe("Alerter", function () {
     it("It should record the number of Failure", function () {
         var alertFailureCount = alertInCelcius(400);
         alertFailureCount += alertInCelcius(800);
-        assert.equal(alertFailureCount, 2);
+        alertFailureCount += alertInCelcius(-780);
+        alertFailureCount += alertInCelcius(1200);
+      
+        assert.equal(alertFailureCount, 4);
     });
 
 });
