@@ -6,10 +6,15 @@ function networkAlertStub(celcius) {
     return 500;
 }
 
-function alertInCelcius(farenheit) {
+function realNetworkIntegration(celcius) {
+    // real network communication code goes here
+  }
+
+
+function alertInCelcius(farenheit, alertFunction = networkAlertStub) {
     let alertFailureCount = 0;
     const celcius = (farenheit - 32) * 5 / 9;
-    const returnCode = networkAlertStub(celcius);
+    const returnCode =  alertFunction (celcius);
     if (returnCode != 200) {
         // non-ok response is not an error! Issues happen in life!
         // let us keep a count of failures to report
