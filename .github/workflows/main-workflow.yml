@@ -16,14 +16,5 @@ jobs:
       - name: Install Dependncies
         run:  sudo npm install
       
-      - name: Install Mocha for testing
-        run:  npm install --save-dev mocha
-      
-      - name: tshirts fail
-        run: bash .github/workflows/expectfail.sh "node tshirts.js"
-
-      - name: misaligned fail
-        run: bash .github/workflows/expectfail.sh "node misaligned.js"
-
-      - name: alerter fail
-        run: bash .github/workflows/expectfail.sh "node alerter.js"
+      - name: Test fail
+        run: bash .github/workflows/expectfail.sh "npm run test"
