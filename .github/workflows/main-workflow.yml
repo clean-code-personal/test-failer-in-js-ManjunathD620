@@ -16,6 +16,9 @@ jobs:
       - name: Install Dependncies
         run:  sudo npm install
       
+      - name: Install Mocha for testing
+        run:  npm install --save-dev mocha
+      
       - name: tshirts fail
         run: bash .github/workflows/expectfail.sh "node tshirts.js"
 
