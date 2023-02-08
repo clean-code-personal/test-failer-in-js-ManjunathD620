@@ -16,5 +16,5 @@ jobs:
       - name: Install Dependncies
         run:  sudo npm install
       
-      - name: Test fail
-        run: bash .github/workflows/expectfail.sh "npm run test"
+      - name: Test Pass
+        run: npm run test
